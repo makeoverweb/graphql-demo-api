@@ -1,22 +1,19 @@
 {
-  "name": "graphql-test-photo-share-api",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -e js,json,graphql"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^2.21.1",
-    "dotenv": "^8.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
     "graphql": "^15.5.0",
-    "graphql-playground-middleware-express": "^1.7.22",
-    "graphql-request": "^3.4.0",
-    "mongodb": "^3.6.4",
     "nodemon": "^2.0.7"
   }
 }
