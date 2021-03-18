@@ -2,24 +2,18 @@ const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const cors = require("cors");
 const schema = require("./schema");
+const users = [{ id: 1, username: "Vasya", age: 25 }];
 
-const users = [
-  {
-    id: 1,
-    username: "admin",
-    age: 28,
-  },
-];
+const app = express();
+app.use(cors());
 
 const createUser = (input) => {
   const id = Date.now();
-  return { id, ...input };
+  return {
+    id,
+    ...input,
+  };
 };
-
-const app = express();
-
-app.use(cors());
-
 const root = {
   getAllUsers: () => {
     return users;
@@ -43,4 +37,4 @@ app.use(
   })
 );
 
-app.listen(5000, () => console.log("сервер запустился"));
+app.listen(5000, () => console.log("server started on port 5000"));
